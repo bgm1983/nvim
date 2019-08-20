@@ -12,6 +12,8 @@ Plug 'tpope/vim-surround'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tomasr/molokai'
+Plug 'eugen0329/vim-esearch'
+Plug 'easymotion/vim-easymotion'
 
 
 
