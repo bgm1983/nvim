@@ -167,11 +167,13 @@ set wrap "Wrap lines"
 map <leader><cr> :noh<cr>
 "quick shutdown vim
 nmap <F4> <ESC>:q<CR>
+imap <F4> <ESC>:q<CR>
 nmap <leader>q :q<CR>
 "quick shutdown vim and don't save changes
 noremap <leader><F4> <ESC>:qall!<CR>
 "quick save file 
 nmap <F5> <ESC>:w<CR>
+imap <F5> <ESC>:w<CR>
 "open nertree 
 nmap <C-o> :NERDTree<CR>
 "enable visual block mode for non linux systems
