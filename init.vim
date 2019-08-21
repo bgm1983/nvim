@@ -205,6 +205,8 @@ noremap <S-h> :tabprevious<CR>
 noremap <S-l> :tabnext<CR>
 "create new vertical split
 noremap <leader>s :vsplit<CR>
+"jump over bracket
+inoremap <C-E> <C-o>A
 
 
 
