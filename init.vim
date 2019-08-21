@@ -14,6 +14,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tomasr/molokai'
 Plug 'eugen0329/vim-esearch'
 Plug 'easymotion/vim-easymotion'
+Plug 'sheerun/vim-polyglot'
 
 
 
