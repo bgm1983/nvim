@@ -21,7 +21,7 @@ Plug 'sheerun/vim-polyglot'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
 
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 nmap <C-o> :NERDTreeToggle<CR>
 
