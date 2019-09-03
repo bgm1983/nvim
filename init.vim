@@ -219,6 +219,8 @@ nnoremap <leader><leader>a <C-t>
 nmap <leader>as <Plug>(AerojumpSpace)
 "Aerojump Mode Bolt
 nmap <leader>ab <Plug>(AerojumpBolt)
+"Aerojump Mode Default
+nmap <leader>ad <Plug>(AerojumpDefault)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
