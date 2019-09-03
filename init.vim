@@ -15,13 +15,15 @@ Plug 'tomasr/molokai'
 Plug 'eugen0329/vim-esearch'
 Plug 'easymotion/vim-easymotion'
 Plug 'sheerun/vim-polyglot'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'philip-karlsson/aerojump.nvim', { 'do' : ':UpdateRemotePlugins'}
 
 
 
 call plug#end()
 let g:deoplete#enable_at_startup = 1
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 nmap <C-o> :NERDTreeToggle<CR>
 
@@ -209,7 +211,14 @@ noremap <S-l> :tabnext<CR>
 noremap <leader>s :vsplit<CR>
 "jump over bracket
 inoremap <C-E> <C-o>A
-
+"jump to ctag reference
+nnoremap <leader>a <C-]>
+"jump back from ctag reference
+nnoremap <leader><leader>a <C-t>
+"Aerojump Mode Space
+nmap <leader>as <Plug>(AerojumpSpace)
+"Aerojump Mode Bolt
+nmap <leader>ab <Plug>(AerojumpBolt)
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
