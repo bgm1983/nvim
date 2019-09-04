@@ -17,6 +17,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'philip-karlsson/aerojump.nvim', { 'do' : ':UpdateRemotePlugins'}
+Plug 'tpope/vim-fugitive'
 
 
 
@@ -62,6 +63,9 @@ set noswapfile
 
 "nowb
 set nowb
+
+"set fugitive vertical split option
+set diffopt+=vertical
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -221,6 +225,10 @@ nmap <leader>as <Plug>(AerojumpSpace)
 nmap <leader>ab <Plug>(AerojumpBolt)
 "Aerojump Mode Default
 nmap <leader>ad <Plug>(AerojumpDefault)
+
+"vertical resize active split
+noremap <silent> <C-S-Left> :vertical resize -5 <CR>
+noremap <silent> <C-S-Right> :vertical resize +5 <CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
