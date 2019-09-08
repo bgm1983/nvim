@@ -133,6 +133,11 @@ highlight Cursor guifg=red guibg=black
 "highlight visual selection
 hi Visual     cterm=bold ctermfg=15  ctermbg=13  
 
+"git diff highlight
+highlight DiffDelete cterm=none ctermfg=fg ctermbg=90 gui=none guifg=fg guibg=Purple
+highlight DiffAdd cterm=none ctermfg=fg ctermbg=19 gui=none guifg=fg guibg=Blue
+"highlight DiffChange cterm=none ctermfg=fg ctermbg=Blue gui=none guifg=fg guibg=Blue
+highlight DiffText cterm=none ctermfg=bg ctermbg=178 gui=none guifg=bg guibg=White
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
