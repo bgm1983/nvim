@@ -31,7 +31,8 @@ nmap <C-o> :NERDTreeToggle<CR>
 
 set number
 
-
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=red
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 " Section General
@@ -39,7 +40,6 @@ set number
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " set history length
-set history=1000
 
 "enable filetype plugin
 filetype plugin on
@@ -106,6 +106,10 @@ set foldcolumn=0
 "enable line number"
 set number
 
+"enable line ending
+set list listchars=tab:>\ ,trail:-,eol:°
+set nolist
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -135,7 +139,7 @@ hi MatchParen cterm=bold ctermbg=0 ctermfg=201
 highlight Cursor guifg=red guibg=black
 "
 "highlight visual selection
-hi Visual     cterm=bold ctermfg=15  ctermbg=13  
+hi Visual     cterm=bold ctermfg=15  ctermbg=13
 
 "git diff highlight
 highlight DiffDelete cterm=none ctermfg=fg ctermbg=90 gui=none guifg=fg guibg=Purple
@@ -182,10 +186,10 @@ imap <F4> <ESC>:q<CR>
 nmap <leader>q :q<CR>
 "quick shutdown vim and don't save changes
 noremap <leader><F4> <ESC>:qall!<CR>
-"quick save file 
+"quick save file
 nmap <F5> <ESC>:w<CR>
 imap <F5> <ESC>:w<CR>
-"open nertree 
+"open nertree
 nmap <C-o> :NERDTree<CR>
 "enable visual block mode for non linux systems
 noremap <C-S-V> <C-V>
@@ -208,7 +212,7 @@ map <C-j> <C-W>j
 "remap ESC in visual mode
 inoremap <C-l> <ESC>
 "remap ESC in visual mode
-vnoremap <C-l> <ESC>                 
+vnoremap <C-l> <ESC>
 
 "create new tab
 noremap <S-t> :tabnew<CR>
@@ -241,13 +245,23 @@ noremap <silent> <C-S-Right> :vertical resize +5 <CR>
 " Section Status Line
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-fun! CleanExtraSpaces()           
+fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
     let old_query = getreg('/')
-    silent! %s/\s\+$//e        
+    silent! %s/\s\+$//e
     call setpos('.', save_cursor)
     call setreg('/', old_query)
-endfun    
+endfunc
+
+fun! DisplayTrailing()
+    match ExtraWhitespace /^\t*\zs \+/
+    match ExtraWhitespace /\s\+$/
+    match ExtraWhitespace /\s\+$\| \+\ze\t/
+endfunc
+
+fun! HideTrailing()
+    match ExtraWhitespace /\s\+$/
+endfunc
 
 if has("autocmd")
     autocmd BufWritePre *.c,*.cpp,*.groovy,*.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
